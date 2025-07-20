@@ -1,0 +1,40 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "**/*.@(js|css)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "**/*.@(jpg|jpeg|gif|png|svg|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "VITE_FIREBASE_API_KEY": "@firebase-api-key",
+    "VITE_FIREBASE_AUTH_DOMAIN": "@firebase-auth-domain",
+    "VITE_FIREBASE_PROJECT_ID": "@firebase-project-id",
+    "VITE_FIREBASE_STORAGE_BUCKET": "@firebase-storage-bucket",
+    "VITE_FIREBASE_MESSAGING_SENDER_ID": "@firebase-messaging-sender-id",
+    "VITE_FIREBASE_APP_ID": "@firebase-app-id",
+    "VITE_USDA_API_KEY": "@usda-api-key"
+  }
+}

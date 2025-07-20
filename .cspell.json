@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Arborio",
+    "Carb",
+    "carbonara",
+    "Confit",
+    "culinaria",
+    "CULINARIA",
+    "deglaze",
+    "deglazed",
+    "Deglazing",
+    "firestore",
+    "Funghi",
+    "glycemic",
+    "grayscale",
+    "Masala",
+    "micronutrients",
+    "minmax",
+    "oklch",
+    "pancetta",
+    "Reggiano",
+    "rgba",
+    "Roboto",
+    "Segoe",
+    "Stevia",
+    "themealdb",
+    "Tikka"
+  ],
+  "ignoreWords": [],
+  "patterns": []
+}

@@ -1,0 +1,16 @@
+export const cuisineOptions = [
+  "American",
+  "Italian",
+  "Mexican",
+  "Chinese",
+  "Indian",
+  "Japanese",
+  "Thai",
+  "Mediterranean",
+  "French",
+  "Greek",
+  "Spanish",
+  "Korean",
+  "Vietnamese",
+  "Other",
+];

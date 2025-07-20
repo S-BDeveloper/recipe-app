@@ -1,0 +1,133 @@
+{
+  "name": "CULINARIA - Professional Cooking Platform",
+  "short_name": "CULINARIA",
+  "description": "Professional cooking platform with AI-powered recipe discovery, meal planning, and cooking analytics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7ed",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["food", "lifestyle", "education", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/foodie-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Recipes",
+      "short_name": "Search",
+      "description": "Search for recipes by ingredients or name",
+      "url": "/search",
+      "icons": [
+        {
+          "src": "/search-icon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "My Favorites",
+      "short_name": "Favorites",
+      "description": "View your saved favorite recipes",
+      "url": "/favorites",
+      "icons": [
+        {
+          "src": "/heart-icon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Meal Planning",
+      "short_name": "Plan",
+      "description": "Plan your meals for the week",
+      "url": "/meal-planning",
+      "icons": [
+        {
+          "src": "/calendar-icon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "AI Features",
+      "short_name": "AI",
+      "description": "Access AI-powered cooking features",
+      "url": "/ai-features",
+      "icons": [
+        {
+          "src": "/ai-icon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "CULINARIA Recipe Discovery"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "CULINARIA Mobile Experience"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "protocol_handlers": [
+    {
+      "protocol": "web+culinaria",
+      "url": "/recipe/%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/import-recipe",
+      "accept": {
+        "application/json": [".json"],
+        "text/plain": [".txt"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "recipe",
+          "accept": ["image/*", "application/json"]
+        }
+      ]
+    }
+  }
+}

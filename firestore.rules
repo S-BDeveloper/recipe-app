@@ -1,0 +1,158 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isValidRecipe() {
+      return request.resource.data.keys().hasAll(['name', 'category', 'userId', 'timestamp']) &&
+             request.resource.data.name is string &&
+             request.resource.data.name.size() > 0 &&
+             request.resource.data.name.size() <= 200 &&
+             request.resource.data.category is string &&
+             request.resource.data.category.size() > 0 &&
+             request.resource.data.category.size() <= 50 &&
+             request.resource.data.userId is string &&
+             request.resource.data.timestamp is number;
+    }
+    
+    function isValidUser() {
+      return request.resource.data.keys().hasAll(['displayName', 'dailyCalories']) &&
+             request.resource.data.displayName is string &&
+             request.resource.data.displayName.size() > 0 &&
+             request.resource.data.displayName.size() <= 100 &&
+             request.resource.data.dailyCalories is number &&
+             request.resource.data.dailyCalories > 0 &&
+             request.resource.data.dailyCalories <= 10000;
+    }
+    
+    function isValidFavorite() {
+      return request.resource.data.keys().hasAll(['userId', 'recipeId', 'recipeName', 'timestamp']) &&
+             request.resource.data.userId is string &&
+             request.resource.data.recipeId is string &&
+             request.resource.data.recipeName is string &&
+             request.resource.data.recipeName.size() > 0 &&
+             request.resource.data.recipeName.size() <= 200 &&
+             request.resource.data.timestamp is number;
+    }
+    
+    function isValidCollection() {
+      return request.resource.data.keys().hasAll(['name', 'userId', 'createdAt']) &&
+             request.resource.data.name is string &&
+             request.resource.data.name.size() > 0 &&
+             request.resource.data.name.size() <= 100 &&
+             request.resource.data.userId is string &&
+             request.resource.data.createdAt is number;
+    }
+    
+    function isValidMealPlan() {
+      return request.resource.data.keys().hasAll(['userId', 'year', 'month', 'meals']) &&
+             request.resource.data.userId is string &&
+             request.resource.data.year is number &&
+             request.resource.data.month is number &&
+             request.resource.data.meals is map;
+    }
+    
+    function isValidReview() {
+      return request.resource.data.keys().hasAll(['userId', 'recipeId', 'rating', 'comment', 'timestamp']) &&
+             request.resource.data.userId is string &&
+             request.resource.data.recipeId is string &&
+             request.resource.data.rating is number &&
+             request.resource.data.rating >= 1 &&
+             request.resource.data.rating <= 5 &&
+             request.resource.data.comment is string &&
+             request.resource.data.comment.size() <= 1000 &&
+             request.resource.data.timestamp is number;
+    }
+
+    // User profiles - users can only access their own profile
+    match /users/{userId} {
+      allow read, write: if isOwner(userId) && isValidUser();
+      allow create: if isAuthenticated() && isOwner(userId) && isValidUser();
+    }
+    
+    // User-submitted recipes - users can only access their own recipes
+    match /userRecipes/{recipeId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid && 
+        isValidRecipe();
+      allow update: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid && 
+        isValidRecipe();
+      allow delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+    
+    // Favorites - users can only access their own favorites
+    match /favorites/{favoriteId} {
+      allow read: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid && 
+        isValidFavorite();
+      allow delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+    
+    // Recipe collections - users can only access their own collections
+    match /collections/{collectionId} {
+      allow read: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid && 
+        isValidCollection();
+      allow update: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid && 
+        isValidCollection();
+      allow delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+    
+    // Meal plans - users can only access their own meal plans
+    match /mealPlans/{mealPlanId} {
+      allow read: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+      allow create, update: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid && 
+        isValidMealPlan();
+      allow delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+    
+    // Recipe reviews - users can only access their own reviews
+    match /reviews/{reviewId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid && 
+        isValidReview();
+      allow update: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid && 
+        isValidReview();
+      allow delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+    
+    // Shopping lists - users can only access their own shopping lists
+    match /shoppingLists/{listId} {
+      allow read: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+      allow create, update: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+      allow delete: if isAuthenticated() && 
+        resource.data.userId == request.auth.uid;
+    }
+    
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 

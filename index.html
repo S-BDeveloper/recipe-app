@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CULINARIA - Professional Cooking Platform & Recipe Discovery</title>
+
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://www.themealdb.com" />
+    <link rel="preconnect" href="https://api.edamam.com" />
+    <link rel="dns-prefetch" href="https://www.themealdb.com" />
+    <link rel="dns-prefetch" href="https://api.edamam.com" />
+
+    <!-- Preload critical resources -->
+    <link
+      rel="preload"
+      href="/src/assets/foodie-logo-simple.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="/src/assets/logo.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ea580c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="CULINARIA" />
+    <link rel="apple-touch-icon" href="/src/assets/foodie-logo-simple.svg" />
+
+    <!-- Performance meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- SEO and social meta tags -->
+    <meta
+      name="description"
+      content="CULINARIA: Your comprehensive cooking platform. Discover thousands of recipes, track nutrition, plan meals, and master culinary skills with professional guidance."
+    />
+    <meta
+      name="keywords"
+      content="culinaria, recipes, cooking, nutrition tracking, meal planning, culinary skills, professional cooking, healthy recipes, cooking platform"
+    />
+    <meta name="author" content="CULINARIA Team" />
+    <meta
+      property="og:title"
+      content="CULINARIA - Professional Cooking Platform & Recipe Discovery"
+    />
+    <meta
+      property="og:description"
+      content="CULINARIA: Your comprehensive cooking platform. Discover thousands of recipes, track nutrition, plan meals, and master culinary skills."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://culinaria.com" />
+    <meta property="og:image" content="/src/assets/foodie-logo-simple.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="CULINARIA - Professional Cooking Platform & Recipe Discovery"
+    />
+    <meta
+      name="twitter:description"
+      content="CULINARIA: Your comprehensive cooking platform. Discover thousands of recipes, track nutrition, plan meals, and master culinary skills."
+    />
+    <meta name="twitter:image" content="/src/assets/foodie-logo-simple.svg" />
+    <link rel="canonical" href="https://culinaria.com" />
+
+    <!-- Performance monitoring script -->
+    <script>
+      // Performance monitoring
+      if ("PerformanceObserver" in window) {
+        const observer = new PerformanceObserver((list) => {
+          list.getEntries().forEach((entry) => {
+            if (entry.entryType === "navigation") {
+              console.log(
+                "Page Load Time:",
+                entry.loadEventEnd - entry.loadEventStart,
+                "ms"
+              );
+            }
+          });
+        });
+        observer.observe({ entryTypes: ["navigation"] });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

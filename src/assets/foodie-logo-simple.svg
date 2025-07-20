@@ -1,0 +1,110 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="24" cy="24" r="22" fill="url(#bgGradient)" stroke="url(#borderGradient)" stroke-width="1.5"/>
+  
+  <!-- Main F Shape -->
+  <g transform="translate(12, 10)">
+    <!-- Vertical stem of F -->
+    <rect x="0" y="0" width="3" height="20" rx="1.5" fill="url(#greenGradient)"/>
+    
+    <!-- Top horizontal bar of F -->
+    <rect x="0" y="0" width="14" height="3" rx="1.5" fill="url(#orangeGradient)"/>
+    
+    <!-- Middle horizontal bar of F -->
+    <rect x="0" y="8" width="10" height="3" rx="1.5" fill="url(#yellowGradient)"/>
+    
+    <!-- Fork -->
+    <g transform="translate(18, 2)">
+      <rect x="0" y="0" width="1" height="10" rx="0.5" fill="url(#grayGradient)"/>
+      <rect x="-1" y="0" width="1" height="3" rx="0.5" fill="url(#grayGradient)"/>
+      <rect x="1" y="0" width="1" height="3" rx="0.5" fill="url(#grayGradient)"/>
+    </g>
+    
+    <!-- Spoon -->
+    <g transform="translate(22, 3)">
+      <ellipse cx="1" cy="1" rx="1" ry="1" fill="url(#lightGrayGradient)"/>
+      <rect x="0.5" y="1" width="1" height="8" rx="0.5" fill="url(#lightGrayGradient)"/>
+    </g>
+    
+    <!-- Chef's Hat -->
+    <g transform="translate(6, -2)">
+      <path d="M0 6 Q3 0 6 6 L6 8 Q3 10 0 8 Z" fill="url(#whiteGradient)"/>
+      <ellipse cx="3" cy="7" rx="3" ry="1" fill="url(#greenGradient)"/>
+    </g>
+    
+    <!-- Leaf -->
+    <g transform="translate(26, 6)">
+      <path d="M0 3 Q2 0 4 3 Q2 6 0 3 Z" fill="url(#leafGradient)"/>
+    </g>
+  </g>
+  
+
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fde68a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grayGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6b7280;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="lightGrayGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9ca3af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6b7280;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f3f4f6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="yellowDot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="redDot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f87171;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="greenDot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="purpleDot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg> 
