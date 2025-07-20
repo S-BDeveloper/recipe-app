@@ -185,7 +185,7 @@ src/
 
 This project is licensed under the Proprietary License - see the [LICENSE](LICENSE) file for details.
 
-**Copyright © 2024 Sabina Begum. All rights reserved.**
+**Copyright © 2025 Sabina Begum. All rights reserved.**
 
 ## 🤝 Contributing
 
