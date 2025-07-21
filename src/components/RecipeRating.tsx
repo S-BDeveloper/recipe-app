@@ -63,7 +63,7 @@ const RecipeRating = ({
     if (!currentUser) return;
     try {
       const ratingDoc = await getDoc(
-        doc(db, "ratings", `${currentUser.uid}_${recipeId}`),
+        doc(db, "ratings", `${currentUser.uid}_${recipeId}`)
       );
       if (ratingDoc.exists()) {
         const data = ratingDoc.data();
@@ -81,7 +81,7 @@ const RecipeRating = ({
     try {
       const reviewsQuery = query(
         collection(db, "ratings"),
-        where("recipeId", "==", recipeId),
+        where("recipeId", "==", recipeId)
       );
       const querySnapshot = await getDocs(reviewsQuery);
       const reviews: Review[] = [];
@@ -121,7 +121,7 @@ const RecipeRating = ({
 
       await setDoc(
         doc(db, "ratings", `${currentUser.uid}_${recipeId}`),
-        ratingData,
+        ratingData
       );
       setSubmitted(true);
       loadAllReviews();
@@ -333,4 +333,3 @@ const RecipeRating = ({
 };
 
 export default RecipeRating;
-

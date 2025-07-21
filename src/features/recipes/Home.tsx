@@ -544,9 +544,9 @@ export default function HomePage({
                 A
               </div>
               <blockquote className="italic text-lg text-muted-foreground mb-4">
-                “Culinaria has completely changed the way I cook at home. The
-                premium recipes are easy to follow and always impress my
-                family!”
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
+                consectetur nisi, euismod euismod nisi nisi euismod.”
               </blockquote>
               <div className="mt-auto">
                 <div className="font-semibold text-green-900 dark:text-green-300">
@@ -561,8 +561,9 @@ export default function HomePage({
                 J
               </div>
               <blockquote className="italic text-lg text-muted-foreground mb-4">
-                “The meal planning and nutrition tracker features are a game
-                changer. I feel healthier and more organized than ever.”
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
+                consectetur nisi, euismod euismod nisi nisi euismod.”
               </blockquote>
               <div className="mt-auto">
                 <div className="font-semibold text-green-900 dark:text-green-300">
@@ -579,8 +580,9 @@ export default function HomePage({
                 S
               </div>
               <blockquote className="italic text-lg text-muted-foreground mb-4">
-                “I love the seasonal collections and chef’s picks. There’s
-                always something new and inspiring to try!”
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
+                consectetur nisi, euismod euismod nisi nisi euismod.”
               </blockquote>
               <div className="mt-auto">
                 <div className="font-semibold text-green-900 dark:text-green-300">
