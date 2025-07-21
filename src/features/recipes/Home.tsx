@@ -537,35 +537,33 @@ export default function HomePage({
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-green-900 dark:text-green-300 text-left">
             What Our Users Say
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {/* Testimonial 1 */}
-            <div className="rounded-xl shadow-lg bg-white dark:bg-neutral-900 border border-border p-6 flex flex-col items-center text-center">
-              <div className="w-14 h-14 rounded-full bg-green-100 dark:bg-green-800 flex items-center justify-center mb-4 text-2xl font-bold text-green-700 dark:text-green-200">
-                A
-              </div>
-              <blockquote className="italic text-lg text-muted-foreground mb-4">
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
-                consectetur nisi, euismod euismod nisi nisi euismod.”
-              </blockquote>
-              <div className="mt-auto">
+          <div>
+            <div className="rounded-xl shadow-lg bg-white dark:bg-neutral-900 border border-border p-8 flex flex-col items-center w-full">
+              {/* Review 1 */}
+              <div className="flex flex-col items-center text-center mb-8 w-full">
+                <div className="w-14 h-14 rounded-full bg-green-100 dark:bg-green-800 flex items-center justify-center mb-4 text-2xl font-bold text-green-700 dark:text-green-200">
+                  A
+                </div>
+                <blockquote className="italic text-lg text-muted-foreground mb-4">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
+                  consectetur nisi, euismod euismod nisi nisi euismod.”
+                </blockquote>
                 <div className="font-semibold text-green-900 dark:text-green-300">
                   John A Doe.
                 </div>
                 <div className="text-xs text-muted-foreground">Home Chef</div>
               </div>
-            </div>
-            {/* Testimonial 2 */}
-            <div className="rounded-xl shadow-lg bg-white dark:bg-neutral-900 border border-border p-6 flex flex-col items-center text-center">
-              <div className="w-14 h-14 rounded-full bg-orange-100 dark:bg-orange-800 flex items-center justify-center mb-4 text-2xl font-bold text-orange-700 dark:text-orange-200">
-                J
-              </div>
-              <blockquote className="italic text-lg text-muted-foreground mb-4">
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
-                consectetur nisi, euismod euismod nisi nisi euismod.”
-              </blockquote>
-              <div className="mt-auto">
+              {/* Review 2 */}
+              <div className="flex flex-col items-center text-center mb-8 w-full">
+                <div className="w-14 h-14 rounded-full bg-orange-100 dark:bg-orange-800 flex items-center justify-center mb-4 text-2xl font-bold text-orange-700 dark:text-orange-200">
+                  J
+                </div>
+                <blockquote className="italic text-lg text-muted-foreground mb-4">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
+                  consectetur nisi, euismod euismod nisi nisi euismod.”
+                </blockquote>
                 <div className="font-semibold text-green-900 dark:text-green-300">
                   Jane J Doe.
                 </div>
@@ -573,18 +571,16 @@ export default function HomePage({
                   Fitness Enthusiast
                 </div>
               </div>
-            </div>
-            {/* Testimonial 3 */}
-            <div className="rounded-xl shadow-lg bg-white dark:bg-neutral-900 border border-border p-6 flex flex-col items-center text-center">
-              <div className="w-14 h-14 rounded-full bg-yellow-100 dark:bg-yellow-800 flex items-center justify-center mb-4 text-2xl font-bold text-yellow-700 dark:text-yellow-200">
-                S
-              </div>
-              <blockquote className="italic text-lg text-muted-foreground mb-4">
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
-                consectetur nisi, euismod euismod nisi nisi euismod.”
-              </blockquote>
-              <div className="mt-auto">
+              {/* Review 3 */}
+              <div className="flex flex-col items-center text-center w-full">
+                <div className="w-14 h-14 rounded-full bg-yellow-100 dark:bg-yellow-800 flex items-center justify-center mb-4 text-2xl font-bold text-yellow-700 dark:text-yellow-200">
+                  S
+                </div>
+                <blockquote className="italic text-lg text-muted-foreground mb-4">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque euismod, nisi vel consectetur euismod, nisl nisi
+                  consectetur nisi, euismod euismod nisi nisi euismod.”
+                </blockquote>
                 <div className="font-semibold text-green-900 dark:text-green-300">
                   John S Doe.
                 </div>
